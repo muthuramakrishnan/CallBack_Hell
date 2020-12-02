@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            position: absolute; 
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h1></h1>
+    </div>
+
+    <script>
+        let count = 10;
+        function displayCount(count, cb)
+        {
+            setTimeout(function(){
+                
+                count--;
+                cb(count);
+            },1000);
+        }
+
+        let h1 = document.querySelector('h1');
+        h1.innerText = count;
+        //CallBack Hell
+        displayCount(count, function(count){
+            /*waits for count value to be returned by the function and then appends to the html dom*/
+            h1.innerText = count;
+            displayCount(count, function(count){
+                h1.innerText = count;
+                displayCount(count, function(count){
+                    h1.innerText = count;
+                        displayCount(count, function(count){
+                            h1.innerText = count;
+                            displayCount(count, function(count){
+                                h1.innerText = count;
+                                displayCount(count, function(count){
+                                    h1.innerText = count;
+                                    displayCount(count, function(count){
+                                        h1.innerText = count;
+                                        displayCount(count, function(count){
+                                            h1.innerText = count;
+                                            displayCount(count, function(count){
+                                                h1.innerText = count;
+                                                displayCount(count, function(count){
+                                                    h1.innerText = 'Happy Birthday!!!';
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
