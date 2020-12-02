@@ -21,49 +21,54 @@
 
     <script>
         let count = 10;
-        function displayCount(count, cb)
-        {
-            setTimeout(function(){
-                
-                count--;
-                cb(count);
-            },1000);
-        }
-
         let h1 = document.querySelector('h1');
-        h1.innerText = count;
         //CallBack Hell
-        displayCount(count, function(count){
-            /*waits for count value to be returned by the function and then appends to the html dom*/
+
+        setTimeout(function(){
             h1.innerText = count;
-            displayCount(count, function(count){
+            count--;
+            setTimeout(function(){
                 h1.innerText = count;
-                displayCount(count, function(count){
+                count--;
+                setTimeout(function(){
                     h1.innerText = count;
-                        displayCount(count, function(count){
+                    count--;
+                    setTimeout(function(){
+                        h1.innerText = count;
+                        count--;
+                        setTimeout(function(){
                             h1.innerText = count;
-                            displayCount(count, function(count){
+                            count--;
+                            setTimeout(function(){
                                 h1.innerText = count;
-                                displayCount(count, function(count){
+                                count--;
+                                setTimeout(function(){
                                     h1.innerText = count;
-                                    displayCount(count, function(count){
+                                    count--;
+                                    setTimeout(function(){
                                         h1.innerText = count;
-                                        displayCount(count, function(count){
+                                        count--;
+                                        setTimeout(function(){
                                             h1.innerText = count;
-                                            displayCount(count, function(count){
+                                            count--;
+                                            setTimeout(function(){
                                                 h1.innerText = count;
-                                                displayCount(count, function(count){
-                                                    h1.innerText = 'Happy Birthday!!!';
-                                            });
-                                        });
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        });
+                                                count--;
+                                                setTimeout(function(){
+                                                    h1.innerText = 'Happy Birthday!!';
+                                                    
+                                                },1000);
+                                            },1000);
+                                        },1000);
+                                    },1000);
+                                },1000);
+                            },1000);
+                        },1000);
+                    },1000);
+                },1000);
+                
+            },1000);
+        },0);
     </script>
 </body>
 </html>
